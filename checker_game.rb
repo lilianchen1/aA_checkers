@@ -73,7 +73,6 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   game = Game.new
-  game.play
   game.game_board.move([2, 0], [3, 1])
   game.game_board.move([3, 1], [4, 2])
   game.game_board.move([5, 5], [4, 4])
@@ -84,4 +83,5 @@ if __FILE__ == $PROGRAM_NAME
   game.game_board.move([4, 2], [6, 4])
   game.game_board.move([6, 4], [7, 5])
   game.game_board.move([7, 5], [6, 4])
+  game.play
 end

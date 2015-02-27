@@ -46,7 +46,7 @@ class Piece
     y = @pos[1]
     move_dirs.each do |pair|
       move = [x + pair[0], y + pair[1]]
-      possible_moves << move if @board[move].nil? && move.all? { |i| i.between?(0, 7) }
+      possible_moves << move if move.all? { |i| i.between?(0, 7) } && @board[move].nil?
     end
     p "possible sliding moves #{possible_moves}"
     return true if possible_moves.include?(end_pos)
