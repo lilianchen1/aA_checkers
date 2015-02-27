@@ -1,0 +1,2 @@
+class NotValidMoveError < ArgumentError
+end
