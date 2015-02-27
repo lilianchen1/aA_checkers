@@ -54,7 +54,6 @@ class Piece
   end
 
   def jumping_move_valid?(end_pos)
-    p "jumping move is valid"
     return false unless enemy_in_front?
     possible_moves = []
     x = @pos[0]
@@ -111,7 +110,6 @@ class Piece
     enemy_x = (x < i) ? (x..i).reject { |n| n == x || n == i } : (i..x).reject { |n| n == x || n == i }
     enemy_y = (y < j) ? (y..j).reject { |n| n == y || n == j } : (j..y).reject { |n| n == y || n == j }
     enemy_pos = enemy_x + enemy_y
-    p "enemy_pos #{enemy_pos}"
     @board[enemy_pos] = nil
   end
 
