@@ -39,7 +39,6 @@ class Board
   end
 
   def move(starting_pos, ending_pos)
-    # debugger
     piece = self[starting_pos]
     if piece.sliding_moves_valid?(ending_pos)
       piece.perform_slide(ending_pos)
@@ -69,7 +68,7 @@ class Board
       end
       puts row_string
     end
-    nil
+    true
   end
 
   def one_color_remaining?

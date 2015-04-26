@@ -14,28 +14,24 @@ class Piece
     starting_pos = self.pos
     @board[end_pos] = self
     @board[starting_pos] = nil
-    # self.pos = end_pos
     check_promotion(end_pos)
   end
 
   def perform_jump(end_pos)
-
-    # while sliding_moves_valid?(end_pos)
     starting_pos = self.pos
     remove_enemy_piece(starting_pos, end_pos)
     @board[end_pos] = self
     @board[starting_pos] = nil
-    # self.pos = end_pos
     check_promotion(end_pos)
   end
 
   def move_dirs
 
-    return [-1, 1].repeated_permutation(2).to_a if @king_flag == true #if king_flag == true
+    return [-1, 1].repeated_permutation(2).to_a if @king_flag == true 
 
     if @color == :red
       return [[1, -1], [1 ,1]]
-    else #if @color == :blue
+    else
       return [[-1, -1], [-1, 1]]
     end
   end
@@ -73,7 +69,7 @@ class Piece
     !enemy_pos.empty?
   end
 
-  def enemy_pos #positions we can travel to with enemies on them when deciding slide or jump
+  def enemy_pos
     x = @pos[0]
     y = @pos[1]
     pos_with_enemy = []
